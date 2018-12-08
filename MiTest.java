@@ -119,11 +119,6 @@ public class MiTest {
 		//Como xpath no es lo mejor, y este "dropdown" tiene de nombre class, uso ese parametro y luego el que contenga el titulo" precio mas bajo"
 		
 		
-		//ERROR aca
-		//driver.findElement(By.className("srp_controls__control")).click();
-		//driver.findElement(By.tagName("Precio + Envío: más bajo primero")).click();
-		
-		
 		//Vamos al dropdown y seleccionamos la opcion "Precio + Envio: mas bajo primero"
 		//ESTE DROPDOWN NO ES UN SELECT, NO SE PUEDE HACER ASI.
 		/*
@@ -133,21 +128,11 @@ public class MiTest {
 		selectPasajeros.selectByVisibleText(Integer.toString(cant));//convierto a string esa cantidad
 		 */
 		
-		//Como no hay identificadores para el Dropdown, uso el xpath aca tambien
-		/*WebDriverWait wait = new WebDriverWait(driver,10);
-		WebElement tipoOrdenamiento = wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//*[@id=\"w4-w1_btn\"]/div/div")))
-		Select selectOrdenamiento = new Select(tipoOrdenamiento);
-		driver.findElement(by)*/
-		//podria meterlos en un set
-		
 		//Esto corresponderia hacerlo en la ultima PAGE que cree(esta tiene: PUMA - ENVIO GRATIS - 10)
-		/*//Punto 5
-		 * System.out.println("Aca es un findElement que dice el numero (a mi me aparece 238 resultados en este momento) usaremos getText() me imagino);
-		 * 
-		 *Punto 6
-		 *Debo ordenar de manera ascendente, ACA ses hace click en otro elemento, para abrir ese panel y luego click en PRECIO + ENVIO MAS BAJO PRIMERO
-		 *
-		 *Punto 7
+
+		 //Punto 6
+		
+		 /*Punto 7
 		 *Hacer un assert que verifique que hay por lo menos 5 elementos?
 		 *
 		 *Punto 8
@@ -158,8 +143,6 @@ public class MiTest {
 		 *
 		 *
 		 */
-		
-		
 	}
 	
 	@AfterMethod
