@@ -22,9 +22,6 @@ public class MiTest {
 	
 	private WebDriver driver;
 
-	// HAY QUE OPTIMIZAR, LOS SLEEP, LOS LLENAR ELEMENTOS, LOS DEFINIR DRIVERS
-	
-	
 	@BeforeMethod
 	public void setup()
 	{
@@ -69,7 +66,7 @@ public class MiTest {
 	//IMPORTANTE: creo que este caso no lo corre porque
 	}
 	
-	@Test(enabled=false)
+	@Test(enabled=false) //RECORDA, QUE ESTOS DE NEWTOURS NO VAN A ANDAR PORQUE EN EL BEFORE NO LAUNCHEAS NEWTOURS.COM!
 	public void miPruebatres()
 	{
 		PageLogin pageLogin = new PageLogin(driver);
@@ -106,43 +103,11 @@ public class MiTest {
 		//driver.findElement(By.xpath("//*[@id=\"w3-w0-multiselect[5]\"]/a/span[1]")).click(); //clickeo la opcion de ENVIO GRATIS
 		// Cambia de pagina https://www.ebay.com/sch/i.html?_from=R40&_nkw=shoes&_sacat=0&Brand=PUMA&_dcat=93427&rt=nc&LH_FS=1
 		//helper.sleepSeconds(2);
-		
-		//Punto 4
+	
+		//Punto 4, 5, 6, 7, 8 , 9 y 10
 		PageTalle paginaConTalleSeleccionado = new PageTalle(driver);
 		paginaConTalleSeleccionado.seleccionarTalle();
-		
-		//Punto 4 aca paso algo  raro, me corria hasta PageMarca antes de modificar PageTipoEnvio, pero salta las instruciones esas y viene directo aca.
-		//driver.findElement(By.xpath("//*[@id=\"w3-w0-w1-multiselect[3]\"]/a/span[1]")).click(); //clickeo la opcion de SIZE 10
-		//helper.sleepSeconds(2);
-		//Cambia de pagina  https://www.ebay.com/sch/i.html?_from=R40&_nkw=shoes&_sacat=0&Brand=PUMA&LH_FS=1&rt=nc&US%2520Shoe%2520Size%2520%2528Men%2527s%2529=10&_dcat=93427
-		
-		//Como xpath no es lo mejor, y este "dropdown" tiene de nombre class, uso ese parametro y luego el que contenga el titulo" precio mas bajo"
-		
-		
-		//Vamos al dropdown y seleccionamos la opcion "Precio + Envio: mas bajo primero"
-		//ESTE DROPDOWN NO ES UN SELECT, NO SE PUEDE HACER ASI.
-		/*
-		WebDriverWait wait = new WebDriverWait(driver,10); //hasta que aparezca el driver, o bien un maximo de 10 segundos.
-		WebElement cantidadPasajeros = wait.until(ExpectedConditions.presenceOfElementLocated(passengersDrop));
-		Select selectPasajeros = new Select(cantidadPasajeros); //driver.findElement(passengersDrop)
-		selectPasajeros.selectByVisibleText(Integer.toString(cant));//convierto a string esa cantidad
-		 */
-		
-		//Esto corresponderia hacerlo en la ultima PAGE que cree(esta tiene: PUMA - ENVIO GRATIS - 10)
-
-		 //Punto 6
-		
-		 /*Punto 7
-		 *Hacer un assert que verifique que hay por lo menos 5 elementos?
-		 *
-		 *Punto 8
-		 *Si consigo agarrar esos 5 elementos, mostrarlos con System.out.println
-		 *
-		 *Punto 9 y Punto 10 : https://www.geeksforgeeks.org/collections-sort-java-examples/ la coleccion donde le haga put
-		 *a esos elementos, ordenarla con Collections.sort(); y Collections.sort(InverseOrder);
-		 *
-		 *
-		 */
+		paginaConTalleSeleccionado.verificarExistenciaElementos();
 	}
 	
 	@AfterMethod
