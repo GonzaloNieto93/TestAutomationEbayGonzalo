@@ -12,8 +12,7 @@ public class PageTipoEnvio {
 	public PageTipoEnvio(WebDriver driver)
 	{
 		this.driver = driver;
-		//tipoDeEnvio = By.id("w_1544183432319_cbx");
-		tipoDeEnvio = By.xpath("//span[contains(text(),'gratis')]/preceding-sibling::input");
+		tipoDeEnvio = By.xpath("//span[contains(text(),'Envío internacional')]/preceding-sibling::input"); //COMO concatenar envio internacional gratis... ya que ahora devuelve devolucion gratis.
 		//La primera vez corrio bien con todo el texto... despues no y ahora volvio a correr bien (hasta el proximo punto),
 		//pero con la palabra gratis. Supuse que era un tema de '' para CHARS y no STRINGS
 		// //span[contains(text(),'PUMA')]/preceding-sibling::input
